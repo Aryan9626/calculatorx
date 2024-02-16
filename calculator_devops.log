@@ -1,0 +1,6 @@
+2024-02-16 18:29:21.602 [main] INFO  org.example.Main - Executing naturalLog function!
+2024-02-16 18:29:21.613 [main] INFO  org.example.Main - Executing squareRoot function!
+2024-02-16 18:29:21.617 [main] INFO  org.example.Main - Executing Power function!
+2024-02-16 18:29:21.621 [main] INFO  org.example.Main - Executing Factorial function!
+2024-02-16 18:20:57.074 [main] INFO  org.example.Main - The world's first unscientific calculator. Now with many many DevOp tools behind it
+2024-02-16 18:30:20.960 [main] INFO  org.example.Main - The world's first unscientific calculator. Now with many many DevOp tools behind it
