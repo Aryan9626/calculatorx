@@ -18,7 +18,7 @@ pipeline {
                     extensions: [],
                     submoduleCfg: [],
                     userRemoteConfigs: [[url: 'https://github.com/AryanPatel111/SPE_MINI_PROJECT.git']]
-                ]);
+                ])
             }
         }
 
