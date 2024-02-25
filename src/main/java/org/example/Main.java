@@ -9,92 +9,105 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        logger.info("The world's first unscientific calculator. Now with many many DevOp tools behind it");
-        Scanner reader = new Scanner(System.in);
-        int op, flag = 0;
-        double num, exp;
-        int numm;
+        logger.info("Starting the Calculator...");
 
-        do {
-            System.out.println("------------Calculator--------------");
-            System.out.println("Choices of Operations:");
-            System.out.println("");
-            System.out.println("1. Square root");
-            System.out.println("2. Factorial");
-            System.out.println("3. Natural Log");
-            System.out.println("4. Power");
-            System.out.println("5. Exit");
-            System.out.println("");
-            System.out.print("Enter your choice(number): ");
-            System.out.println("");
-            op = reader.nextInt();
-            if (op == 5) flag = 1;
-            else {
-                switch (op) {
-                    case 1:  // Square Root
-                        System.out.println("You choose Square Root!!");
-                        System.out.println("");
-                        System.out.print("Enter number: ");
-                        num = reader.nextDouble();
-                        System.out.println("The Result is " + calculateSquareRoot(num));
-                        break;
+        Scanner scanner = new Scanner(System.in);
 
-                    case 2: // Factorial
-                        System.out.println("You choose Factorial!!");
-                        System.out.println("");
-                        System.out.print("Enter number: ");
-                        numm = reader.nextInt();
-                        System.out.println("The Result is " + calculateFactorial(numm));
-                        break;
+        boolean isRunning = true;
 
-                    case 3: // Natural Log
-                        System.out.println("You choose Natural Log!!");
-                        System.out.println("");
-                        System.out.print("Enter number: ");
-                        num = reader.nextDouble();
-                        System.out.println("The Result is " + calculateNaturalLogarithm(num));
-                        break;
+        while (isRunning) {
+            printMenu();
 
-                    case 4: // Power
-                        System.out.println("You choose Power!!");
-                        System.out.println("");
-                        System.out.print("Enter number: ");
-                        num = reader.nextDouble();
-                        System.out.print("exponent: ");
-                        exp = reader.nextDouble();
-                        System.out.println("The Result is " + calculatePowerFunction(num, exp));
-                        break;
+            int choice = scanner.nextInt();
 
-                    default:
-                        System.out.println("Exiting due to invalid input!!");
-                        flag = 1;
-                }
+            switch (choice) {
+                case 1:
+                    displayResult("Square Root", calculateSquareRoot(scanner));
+                    break;
+                case 2:
+                    displayResult("Factorial", calculateFactorial(scanner));
+                    break;
+                case 3:
+                    displayResult("Natural Logarithm", calculateNaturalLog(scanner));
+                    break;
+                case 4:
+                    displayResult("Power", calculatePower(scanner));
+                    break;
+                case 5:
+                    displayResult("Logarithm Base 2", calculateLogBase2(scanner));
+                    break;
+                case 6:
+                    logger.info("Exiting...");
+                    isRunning = false;
+                    break;
+                default:
+                    logger.warn("Invalid choice. Please try again.");
             }
-        } while (flag == 0);
+        }
     }
 
-    public static double calculateSquareRoot(double num) {
-        double c = Math.sqrt(num);
-        logger.info("Executing squareRoot function!");
-        return c;
+    private static void printMenu() {
+        logger.info("******************CalculatorX******************");
+        logger.info("Available Operations:");
+        logger.info("1. Square Root");
+        logger.info("2. Factorial");
+        logger.info("3. Natural Logarithm");
+        logger.info("4. Power");
+        logger.info("5. Logarithm Base 2");
+        logger.info("6. Exit");
+        logger.info("Enter your choice (number): ");
     }
 
-    public static int calculateFactorial(int num) {
-        int c = num;
-        for (int i = num - 1; i >= 1; i--) c = c * i;
-        logger.info("Executing Factorial function!");
-        return c;
+    private static double calculateSquareRoot(Scanner scanner) {
+        logger.info("Enter a number: ");
+        double num = scanner.nextDouble();
+        double result = Math.sqrt(num);
+        logger.info("Square Root of {} is {}", num, result);
+        return result;
     }
 
-    public static double calculateNaturalLogarithm(double num) {
-        double c = Math.log(num);
-        logger.info("Executing naturalLog function!");
-        return c;
+    private static int calculateFactorial(Scanner scanner) {
+        logger.info("Enter a number: ");
+        int num = scanner.nextInt();
+        int result = 1;
+        for (int i = 2; i <= num; i++) {
+            result *= i;
+        }
+        logger.info("Factorial of {} is {}", num, result);
+        return result;
     }
 
-    public static double calculatePowerFunction(double num, double exp) {
-        double c = Math.pow(num, exp);
-        logger.info("Executing Power function!");
-        return c;
+    private static double calculateNaturalLog(Scanner scanner) {
+        logger.info("Enter a number: ");
+        double num = scanner.nextDouble();
+        double result = Math.log(num);
+        logger.info("Natural Logarithm of {} is {}", num, result);
+        return result;
+    }
+
+    private static double calculatePower(Scanner scanner) {
+        logger.info("Enter a base number: ");
+        double base = scanner.nextDouble();
+        logger.info("Enter an exponent: ");
+        double exp = scanner.nextDouble();
+        double result = Math.pow(base, exp);
+        logger.info("{} raised to the power of {} is {}", base, exp, result);
+        return result;
+    }
+
+    private static double calculateLogBase2(Scanner scanner) {
+        logger.info("Enter a number: ");
+        double num = scanner.nextDouble();
+        double result = Math.log(num) / Math.log(2);
+        logger.info("Logarithm Base 2 of {} is {}", num, result);
+        return result;
+    }
+
+    private static void displayResult(String operation, double result) {
+        System.out.println("Result of " + operation + ": " + result);
+    }
+
+    private static void displayResult(String operation, int result) {
+        System.out.println("Result of " + operation + ": " + result);
     }
 }
