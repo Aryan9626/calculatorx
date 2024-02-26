@@ -7,4 +7,4 @@ WORKDIR /app
 COPY target/calculatorx-dependencies.jar /app/
 
 # Define the command to run the application
-#CMD ["java", "-cp", "minispe-with-dependencies.jar", "org.example.Main"]
+#CMD ["java", "-cp", "calculatorx-dependencies.jar", "org.example.Main"]
