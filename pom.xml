@@ -28,7 +28,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version> <!-- Use the version that works for you -->
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -47,7 +47,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>calculatorx-dependencies</finalName> <!-- New name for the JAR file -->
+                            <finalName>calculatorx-dependencies</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>Main</mainClass>
