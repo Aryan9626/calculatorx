@@ -14,18 +14,16 @@ public class Main {
         int op;
 
         do {
-            System.out.println("******************CalculatorX******************");
-            System.out.println("Available Operations:");
-            System.out.println();
-            System.out.println("1. Square Root");
-            System.out.println("2. Factorial");
-            System.out.println("3. Natural Logarithm");
-            System.out.println("4. Power");
-            System.out.println("5. Logarithm Base 2");
-            System.out.println("6. Exit");
+            System.out.println("\n******************CalculatorX******************");
+            System.out.println("Available Operations: ");
+            System.out.print("[1] 'Square Root'" + "    ");
+            System.out.print("[2] 'Factorial'" + "    ");
+            System.out.print("[3] 'Natural Logarithm'" + "   ");
+            System.out.print("[4] 'Power'" + "    ");
+            System.out.print("[5] 'Logarithm Base 2'" + "    ");
+            System.out.print("[6] 'Exit'");
             System.out.println();
             System.out.print("Enter your choice (number): ");
-            System.out.println();
             op = reader.nextInt();
 
             if (op == 1) { // Square Root
