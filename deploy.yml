@@ -18,5 +18,6 @@
       service:
         name: docker
         state: started
+        
     - name: Running container
       shell: docker run -it -d --name calculatorx aryan9626/calculatorx
