@@ -5,6 +5,3 @@ WORKDIR /app
 
 # Copy the application JAR file into the container
 COPY target/calculatorx-dependencies.jar /app/
-
-# Define the command to run the application
-#CMD ["java", "-cp", "calculatorx-dependencies.jar", "org.example.Main"]
