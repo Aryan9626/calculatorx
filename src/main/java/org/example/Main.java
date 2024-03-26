@@ -9,6 +9,7 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+        // Comment dummy
         logger.info("Main method execution started...");
         Scanner reader = new Scanner(System.in);
         int op;
